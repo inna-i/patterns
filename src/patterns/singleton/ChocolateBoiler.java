@@ -10,10 +10,14 @@ public class ChocolateBoiler {
 		boiled = false;
 	}
 
-	public static synchronized ChocolateBoiler getInstance() {
+	public static ChocolateBoiler getInstance() {
 		if (uniqueInstance == null) {
-			System.out.println("Create unique instance of Chocolate Boiler");
-			uniqueInstance = new ChocolateBoiler();
+			synchronized (ChocolateBoiler.class) {
+				if(uniqueInstance == null) {
+					System.out.println("Create unique instance of Chocolate Boiler");
+					uniqueInstance = new ChocolateBoiler();
+				}
+			}
 		}
 		System.out.println("Return instance of Chocolate Boiler");
 		return uniqueInstance;
