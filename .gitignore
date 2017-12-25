@@ -1,0 +1,11 @@
+# Intellij project files #
+.idea/
+*.ipr
+*.iml
+*.iws
+out/
+
+# Package Files #
+*.jar
+*.war
+*.ear
