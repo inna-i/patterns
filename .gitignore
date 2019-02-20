@@ -3,6 +3,7 @@
 *.ipr
 *.iml
 *.iws
+*.class
 out/
 
 # Package Files #
